@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script src="libs/jquery.js"></script>
+	<script>
+	var promise = $.ajax({
+			url:'userdata.json',
+			dataType:'json'
+	})
+
+	promise
+	.then(res => {
+		console.log('1 ->',res)
+
+		return $.ajax({
+				url:'product.json',
+				dataType:'json'
+		})
+	})
+	.then(res => {
+		console.log(res)
+
+		return $.ajax({
+				url:'stoke.json',
+				dataType:'json'
+		})
+	}).then(res => {
+		console.log(res);
+	})
+	</script>
+</body>
+</html>

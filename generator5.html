@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function* gen(){
+			// 第一次next会运行
+
+			var a = yield // 第二次next;
+			var b = yield // 第三次next;
+
+			console.log(a+b);
+		}
+
+		var generator = gen();
+
+		generator.next();
+		generator.next(1);
+		generator.next(3);
+	</script>
+</body>
+</html>

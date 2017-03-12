@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+	<title>Document</title>
+	<style>
+		#box{
+			width: 200px;
+			height: 200px;
+			background-color: green;
+			margin: 100px auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<script src="libs/zepto.min.js"></script>
+	<script>
+		$.ajax({
+			url:'https://sug.so.360.cn/suggest',
+			dataType:"jsonp",
+			data:{
+				word:'b'
+			},
+			success:function(res){
+				console.log(res);
+			}
+		})
+	</script>
+</body>
+</html>

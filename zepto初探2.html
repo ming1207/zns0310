@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box{
+			width: 200px;
+			height: 200px;
+			background-color: green;
+			margin: 100px auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<script src="libs/zepto.min.js"></script>
+	<script>
+		$('#box').click(function(){
+			$(this).css({
+				'background-color':'red',
+				'width':'100px',
+				'height':'300px'
+			});
+		})
+	</script>
+</body>
+</html>

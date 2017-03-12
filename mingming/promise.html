@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="libs/jquery-1.7.2.js" ></script>
+</head>
+<body>
+<ul>
+	ul>li{$}*6
+</ul>
+	<script type="text/javascript">
+		var promise=new Promise((resolve,reject) =>{
+			$.ajax({
+				url:'libs/fruit.txt',
+				dataType:'json',
+				success:function(res){
+					resolve(res)
+				},
+				error:function(err){
+					reject(err)
+				}
+			})
+
+		})
+		promise
+		.then(res=>{
+			console.log(res)
+			return $.ajax({
+				url:'libs/stock.txt',
+				dataType:'json'
+			})
+				
+		})
+		.then(res=>{
+			console.log(res)
+		})
+		.catch(err=>{
+			console.log('2->',err)
+		})
+
+	</script>
+</body>
+</html>

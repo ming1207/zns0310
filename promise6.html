@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script src="libs/jquery.js"></script>
+	<script>
+	var promise1 = $.ajax({
+			url:'userdat.json',
+			dataType:'json'
+	});
+
+	var promise2 = $.ajax({
+			url:'product.json',
+			dataType:'json'
+	});
+
+	var promise3 = $.ajax({
+			url:'stoke.json',
+			dataType:'json'
+	});
+
+	Promise.all([promise1,promise2,promise3]).then(res => {
+		console.log('res ->',res);
+	},err => {
+		console.log('err ->',err);
+	})
+	</script>
+</body>
+</html>

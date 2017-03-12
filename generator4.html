@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function* gen(){
+			console.log(1);
+			var a = yield
+
+			console.log(a);
+		}
+
+		var generator = gen();
+
+		generator.next();
+		generator.next(3);
+	</script>
+</body>
+</html>

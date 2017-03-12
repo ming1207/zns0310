@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="libs/jquery-1.7.2.js" ></script>
+</head>
+<body>
+	<script type="text/javascript">
+		var promise1=$.ajax({
+			url:'libs/fruit.txt',
+				dataType:'json'
+		})
+		var promise2=$.ajax({
+			url:'libs/stock.txt',
+				dataType:'json'
+		})
+		Promise.all([promise1,promise2]).then(
+		res=>{
+			console.log('res->',res);
+		},err=>{
+			console.log('err->',err)
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+复习
+
+变量声明
+let -> 没有变量提升，不可重复声明，有块级作用域
+const -> 不可变
+
+字符串模板
+`dhfjgh${ variable }jkl`
+
+箭头函数
+item => item+1
+(item1,item2) => item1+item2
+() => 3
+() => { console.log(1); return 2}
+
+forEach
+arr.forEach((element,index) => {})
+
+map
+arr.map((ele,index) => {})
+
+filter
+arr.filter((ele,index) => { return boolean })
+
+reduce
+let sum = arr.reduce((a上次返回值,b当前值,index) => {
+	return a+b
+})
+
+
+function method(a,b,...args){
+	//...
+}
+
+function method(...args){
+	// args	标准数组
+}
+
+
+解构赋值
+var json = {
+	a:1,
+	b:2
+}
+
+var { a,b } = json // a:1,b:2
+
+var arr = [1,2,3]
+
+var [one,two,three] = arr;
+// one:1,two:2,three:3
+
+function(ev){}
+function({clientX,clientY}){}
+
+新类
+class Klass{
+	constructor(params){
+		this.name = 'zns'
+	}
+
+	method(param){
+
+	}
+}
+
+class Subclass extends Klass{
+	constructor(a,b,c){
+		super(a,b,c);
+		...
+	}
+}
+
+
+---
+Promise
+
+callback hell -> 回调地狱
+
+$.ajax({
+	url:'',
+	succes:function(){
+		$.ajax({
+			url:'',
+			success:function(){
+				$.ajax({
+					url:'',
+					success:function(){
+					}
+				})
+			}
+		})
+	}
+})
+
+如何使用？
+
+var promise = new Promise((resolve,reject) =>{
+	$.ajax({
+		......
+		success:function(res){
+			resolve(res)
+		},
+		error:function(err){
+			reject(err)
+		}
+	})	
+})
+
+promise.then(succ,fail)
+promise.then(succ).catch(err);
+
+jquery ajax用法
+
+var promise = $.ajax({url:"",dataType:''})
+promise.then(succ,fail);
+
+链式调用
+
+var promise = $.ajax({url:"1.text",dataType:''})
+
+promise.then(res => {
+	// res == 1.text
+
+	return $.ajax({url:"2.text",dataType:''})
+}).then(res => {
+	// res == 2.txt	
+})
+---
+Generator 生成器
+
+定义generator生成器
+function* name{// 第一次next执行
+	var a = yield -> 暂停 // a:param,第二次next执行
+	var b = yield -> 暂停 // b:param2,第三次next执行
+}
+
+let gen = name();// 生成一个生成器对象
+gen.next()
+gen.next(param)
+gen.next(param2)
+
+循环生成器
+for(var value of gen){
+	// 所有yield返回值	
+}
+---
+json简写
+---
+zepto
+---
+iScroll
+---
+Swiper
+---
+
+
+
+
+
+
+
+
